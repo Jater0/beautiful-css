@@ -1,0 +1,46 @@
+body {
+    background: radial-gradient(
+        200% 100% at bottom center,
+        #F7F7B6, 
+        #E96F92,
+        #1B2947
+    );
+    background: radial-gradient(
+        220% 105% at top center,
+        #1B2947 10%,
+        #75517D 40%,
+        #E96F92 65%,
+        #F7F7B6
+    );
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.stars {
+    transform: perspective(500px);
+    transform-style: preserve-3d;
+    position: absolute;
+    perspective-origin: 50% 100%;
+    left: 50%;
+    animation: rotate 90s infinite linear;
+    bottom: 0;
+}
+
+.star {
+    width: 2px;
+    height: 2px;
+    background: #F7F7B8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+}
+
+@keyframes rotate {
+    0% {
+        transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+    }
+    100% {
+        transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+    }
+}
