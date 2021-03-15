@@ -1,0 +1,87 @@
+body {
+    background: #1E1F26;
+}
+
+body .folder {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFD485;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+body .folder::before {
+    width: 55px;
+    height: 25px;
+    border-radius: 5px;
+    content: "";
+    background-color: #FFD485;
+    position: absolute;
+    top: -10px;
+    left: 0px;
+}
+
+body .folder::after {
+    display: block;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    content: "";
+    transform: skew(0deg);
+    background-color: #FFE1A8;
+    transition: all 0.2s;
+}
+
+.folder .paper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: 50%;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    width: 190px;
+    height: 140px;
+    transition: all 0.2s;
+}
+
+.folder .paper.one {
+    background-color: #ffadad;
+}
+
+.folder .paper.two {
+    background-color: #FFD6A5;
+}
+
+.folder .paper.three {
+    background-color: #FDFFB6;
+}
+
+.folder .paper.four {
+    background-color: #9BF6FF;
+}
+
+.folder:hover:after {
+    transform: skew(-20deg);
+    margin-left: 25px;
+}
+
+.folder:hover .paper:nth-child(1) {
+    transform: rotate(10deg) translate(-80px, -80px);
+}
+
+.folder:hover .paper:nth-child(2) {
+    transform: rotate(20deg) translate(-80px, -80px);
+}
+
+.folder:hover .paper:nth-child(3) {
+    transform: rotate(30deg) translate(-80px, -80px);
+}
+
+.folder:hover .paper:nth-child(4) {
+    transform: rotate(40deg) translate(-80px, -80px);
+}
