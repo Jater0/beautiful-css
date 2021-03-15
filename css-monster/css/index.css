@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #E65E6C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monstertext {
+    color: white;
+    font-size: 18px;
+}
+
+.monster {
+    height: 100px;
+    width: 110px;
+    background-color: #F06754;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-left: 10px;
+    box-shadow: 0px 10px 10px 0px rgba(110, 110, 110, 0.3);
+    position: relative;
+    animation: jumping 0.8s infinite alternate;
+}
+
+.monster.blue {
+    background-color: #074177;
+    animation-delay: 0.5s;
+}
+
+.monster::after, .monster::before {
+    content: "";
+    height: 10px;
+    width: 20%;
+    background-color: white;
+    display: block;
+    border-radius: 10px;
+    position: absolute;
+    top: -10px;
+}
+
+.monster::before {
+    right: 45%;
+    transform: rotate(30deg);
+}
+
+.monster::after {
+    left: 45%;
+    transform: rotate(-30deg);
+}
+
+.monster .eye {
+    height: 42%;
+    width: 42%;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monster .eye .eyeBall {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    background-color: #074177;
+    animation: eyemove 1.6s infinite alternate;
+}
+
+.monster .month {
+    height: 10%;
+    width: 30px;
+    margin-top: 10px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.monster.blue .eyeBall, .monster.blue .month {
+    background-color: #E55A54;
+}
+
+@keyframes jumping {
+    50% {
+        top: 0;
+        box-shadow: 0px 10px 10px 0px rgba(110, 110, 100, 0.3);
+    }
+
+    100% {
+        top: -50px;
+        box-shadow: 0px 120px 10px 0px rgba(110, 110, 110, 0.2);
+    }
+}
+
+@keyframes eyemove {
+    0%, 10% {
+        transform: translateX(-50%);
+    }
+
+    90%, 100% {
+        transform: translate(50%);
+    }
+}
+
+.pageloading {
+    background-color: #074177;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.5s;
+}
+
+.pageloading .loading {
+    margin-top: 50px;
+    background-color: white;
+    height: 8px;
+    width: 200px;
+    border-radius: 5px;
+    display: block;
+    overflow: hidden;
+}
+
+.pageloading .loading {
+    transition: 0.5s;
+}
+
+.pageloading .loading .bar {
+    background-color: #DB4D6D;
+    height: 100%;
+    width: 0;
+}
+
+.pageloading.complete {
+    opacity: 0;
+}
+
+.pageloading.complete .monster {
+    transform: rotateZ(360deg);
+    transition: 0.5s;
+}
