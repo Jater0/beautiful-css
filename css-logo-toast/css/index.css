@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #333;
+}
+
+.main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80vw;
+    transform: translate(-50%, -50%);
+}
+
+.main span {
+    position: relative;
+    margin: 2vw;
+}
+
+.main span i {
+    color: white;
+    font-size: 10vw;
+    transition: 0.5s linear;
+}
+
+.main span label {
+    position: absolute;
+    font-size: 3vw;
+    bottom: -12vw;
+    white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #1e90ff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2vw;
+    background: white;
+    border-radius: 2vw;
+    opacity: 0;
+    transition: 0.5s linear;
+    filter: drop-shadow(0 0 1vw black);
+}
+
+.main span label::before {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    content: "";
+    left: 50%;
+    top: -1vw;
+    background: white;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.main span:hover label {
+    opacity: 1;
+}
+
+.main span:hover i {
+    color: #1e90ff;
+    text-shadow: 
+        0 0 2px #1e90ff,
+        0 0 4px #1e90ff;
+}
