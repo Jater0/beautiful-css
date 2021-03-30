@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #F1F2F6;
+}
+
+.main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+h1 {
+    font-size: 20vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgba(30, 144, 255, 0.7);
+    transform: skew(10deg) rotate(-10deg);
+    transition: 0.5s linear;
+}
+
+h1::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100;
+    height: 50%;
+    color: #F1F2F6;
+    transition: 0.5s linear;
+}
+
+h1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #F1F2F6;
+    clip-path: polygon(
+        0 50%, 
+        100% 50%, 
+        100% 100%, 
+        0 100%
+    );
+    transition: 0.5s linear;
+}
+
+h1:hover::before {
+    color: #FFFFFF;
+    top: -4.8%;
+    transform: translate(1.6vw, 0) skew(-13deg) scale(1, 1.2);
+    text-shadow: 2px -1px 6px rgba(0, 0, 0, 0.3);
+}
+
+h1:hover::after {
+    color: #CED6E0;
+    transform: skew(13deg) scale(1, 0.8);
+    text-shadow: 2px -1px 6px rgba(0, 0, 0, 0.3);
+}
+
+h1:hover {
+    text-shadow: 
+        1px 3px 6px white,
+        0 0 0 black,
+        1px 3px 6px white;
+}
